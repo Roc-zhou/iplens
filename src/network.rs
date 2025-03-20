@@ -83,7 +83,9 @@ pub fn get_dns_servers() -> Result<Vec<String>, Box<dyn Error>> {
         use wmi::{COMLibrary, WMIConnection};
 
         #[derive(Deserialize, Debug)]
+        #[serde(rename_all = "PascalCase")]
         struct DNSServer {
+            #[allow(non_snake_case)]
             DNSServerSearchOrder: Option<Vec<String>>,
         }
 
