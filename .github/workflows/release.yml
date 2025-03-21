@@ -31,10 +31,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: windows-latest
-            target: x86_64-pc-windows-msvc
-            artifact_name: iplens.exe
-            asset_name: iplens-windows-x86_64.exe
           - os: macos-latest
             target: x86_64-apple-darwin
             artifact_name: iplens
