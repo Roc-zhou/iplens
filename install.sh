@@ -7,7 +7,7 @@ OS="$(uname -s)"
 ARCH="$(uname -m)"
 
 # 确定下载链接
-GITHUB_REPO="0x1cc4/iplens"
+GITHUB_REPO="Roc-zhou/iplens"
 LATEST_RELEASE_URL="https://github.com/$GITHUB_REPO/releases/latest/download"
 
 if [ "$OS" = "Darwin" ]; then
