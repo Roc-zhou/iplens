@@ -28,6 +28,7 @@ TMP_DIR=$(mktemp -d)
 cd "$TMP_DIR"
 
 echo "下载 iplens..."
+echo "BINARY_URL: $BINARY_URL"
 if command -v curl > /dev/null 2>&1; then
     curl -fsSL "$BINARY_URL" -o iplens
 else
