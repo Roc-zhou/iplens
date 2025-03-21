@@ -9,29 +9,29 @@ IPLens 是一个跨平台的命令行工具，用于检测和显示 IP 相关信
 Linux 和 macOS 用户可以使用以下命令一键安装：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/0x1cc4/iplens/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Roc-zhou/iplens/refs/heads/main/install.sh | bash
 ```
 
 ### 手动安装
 
-1. 从 [GitHub Releases](https://github.com/0x1cc4/iplens/releases) 下载最新版本：
+1. 从 [GitHub Releases](https://github.com/Roc-zhou/iplens/releases) 下载最新版本：
 
 macOS 用户：
 ```bash
 # Intel Mac
-curl -LO https://github.com/0x1cc4/iplens/releases/latest/download/iplens-macos-x86_64
+curl -LO https://github.com/Roc-zhou/iplens/releases/latest/download/iplens-macos-x86_64
 chmod +x iplens-macos-x86_64
 sudo mv iplens-macos-x86_64 /usr/local/bin/iplens
 
 # Apple Silicon (M1/M2) Mac
-curl -LO https://github.com/0x1cc4/iplens/releases/latest/download/iplens-macos-arm64
+curl -LO https://github.com/Roc-zhou/iplens/releases/latest/download/iplens-macos-arm64
 chmod +x iplens-macos-arm64
 sudo mv iplens-macos-arm64 /usr/local/bin/iplens
 ```
 
 Linux 用户：
 ```bash
-curl -LO https://github.com/0x1cc4/iplens/releases/latest/download/iplens-linux-x86_64
+curl -LO https://github.com/Roc-zhou/iplens/releases/latest/download/iplens-linux-x86_64
 chmod +x iplens-linux-x86_64
 sudo mv iplens-linux-x86_64 /usr/local/bin/iplens
 ```
@@ -50,7 +50,7 @@ iplens --version
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # 克隆仓库
-git clone https://github.com/0x1cc4/iplens.git
+git clone https://github.com/Roc-zhou/iplens.git
 cd iplens
 
 # 编译安装
