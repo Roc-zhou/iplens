@@ -10,7 +10,7 @@ pub fn print_table(
     local_ips: &[(String, IpAddr)],
     // public_ip: &str,
     // vpn_status: &VpnStatus,
-    dns_servers: &[String],
+    // dns_servers: &[String],
 ) -> Result<(), Box<dyn Error>> {
     let mut table = Table::new();
 
@@ -51,13 +51,13 @@ pub fn print_table(
 
     // table.add_row(row!["VPN 状态", vpn_info]);
 
-    // DNS 服务器
-    if !dns_servers.is_empty() {
-        let dns_str = dns_servers.join("\n");
-        table.add_row(row!["DNS 服务器", dns_str]);
-    } else {
-        table.add_row(row!["DNS 服务器", "未检测到"]);
-    }
+    // // DNS 服务器
+    // if !dns_servers.is_empty() {
+    //     let dns_str = dns_servers.join("\n");
+    //     table.add_row(row!["DNS 服务器", dns_str]);
+    // } else {
+    //     table.add_row(row!["DNS 服务器", "未检测到"]);
+    // }
 
     table.printstd();
     Ok(())
@@ -69,7 +69,7 @@ pub fn print_json(
     local_ips: &[(String, IpAddr)],
     // public_ip: &str,
     // vpn_status: &VpnStatus,
-    dns_servers: &[String],
+    // dns_servers: &[String],
 ) -> Result<(), Box<dyn Error>> {
     let local_ip_map = local_ips
         .iter()
@@ -93,7 +93,7 @@ pub fn print_json(
         "local_ips": local_ip_map,
         // "public_ip": public_ip,
         // "vpn": vpn_info,
-        "dns_servers": dns_servers
+        // "dns_servers": dns_servers
     });
 
     println!("{}", to_string_pretty(&json_output)?);

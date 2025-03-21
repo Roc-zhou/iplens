@@ -4,7 +4,7 @@ pub mod output;
 pub mod vpn;
 
 use cli::Args;
-use network::{get_dns_servers, get_local_ips};
+use network::get_local_ips;
 use output::{print_json, print_table};
 // use vpn::check_vpn_status;
 
@@ -17,7 +17,7 @@ pub async fn run(args: Args) -> Result<(), Box<dyn std::error::Error>> {
     let local_ips = get_local_ips()?;
     // let public_ip = get_public_ip().await?;
     // let vpn_status = check_vpn_status()?;
-    let dns_servers = get_dns_servers()?;
+    // let dns_servers = get_dns_servers()?;
 
     // 根据参数选择输出格式
     if args.json {
@@ -26,7 +26,7 @@ pub async fn run(args: Args) -> Result<(), Box<dyn std::error::Error>> {
             &local_ips,
             // &public_ip,
             // &vpn_status,
-            &dns_servers,
+            // &dns_servers,
         )?;
     } else {
         print_table(
@@ -34,7 +34,7 @@ pub async fn run(args: Args) -> Result<(), Box<dyn std::error::Error>> {
             &local_ips,
             // &public_ip,
             // &vpn_status,
-            &dns_servers,
+            // &dns_servers,
         )?;
     }
 
