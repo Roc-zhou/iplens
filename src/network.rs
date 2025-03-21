@@ -76,31 +76,29 @@ pub async fn get_public_ip() -> Result<String, Box<dyn Error>> {
 
 /// 获取 DNS 服务器地址
 pub fn get_dns_servers() -> Result<Vec<String>, Box<dyn Error>> {
-    #[cfg(target_os = "windows")]
-    {
-        // Windows 平台使用 WMI 查询 DNS 服务器
-        use serde::Deserialize;
-        use wmi::{COMLibrary, WMIConnection};
+    // #[cfg(target_os = "windows")]
+    // {
+    //     use wmi::{COMLibrary, WMIConnection};
 
-        #[derive(Deserialize, Debug)]
-        #[serde(rename_all = "PascalCase")]
-        struct DNSServer {
-            #[allow(non_snake_case)]
-            DNSServerSearchOrder: Option<Vec<String>>,
-        }
+    //     #[derive(Deserialize, Debug)]
+    //     #[serde(rename_all = "PascalCase")]
+    //     struct DNSServer {
+    //         #[allow(non_snake_case)]
+    //         DNSServerSearchOrder: Option<Vec<String>>,
+    //     }
 
-        let com_lib = COMLibrary::new()?;
-        let wmi_con = WMIConnection::new(com_lib)?;
-        let dns_servers: Vec<DNSServer> = wmi_con.query()?;
+    //     let com_lib = COMLibrary::new()?;
+    //     let wmi_con = WMIConnection::new(com_lib)?;
+    //     let dns_servers: Vec<DNSServer> = wmi_con.query()?;
 
-        for server in dns_servers {
-            if let Some(servers) = server.DNSServerSearchOrder {
-                return Ok(servers);
-            }
-        }
+    //     for server in dns_servers {
+    //         if let Some(servers) = server.DNSServerSearchOrder {
+    //             return Ok(servers);
+    //         }
+    //     }
 
-        Ok(Vec::new())
-    }
+    //     Ok(Vec::new())
+    // }
 
     #[cfg(any(target_os = "linux", target_os = "macos"))]
     {
